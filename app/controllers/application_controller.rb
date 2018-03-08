@@ -8,4 +8,16 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "supersecret"
   end
+
+  get '/' do
+    if logged_in?
+      redirect '/home'
+    else
+      erb :index
+  end
+
+  helpers do
+
+  end
+
 end
