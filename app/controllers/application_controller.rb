@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
       redirect '/home'
     else
       erb :index
+    end
   end
 
   helpers do
