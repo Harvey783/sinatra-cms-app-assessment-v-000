@@ -15,13 +15,31 @@ class UsersController < ApplicationController
     else
       user = User.create(params)
       user.save
-      session[:user_id] = @user.id
+      session[:user_id] = user.id
       redirect '/home'
     end
   end
 
+  post '/login' do
+    user = User.find_by(:username => params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect '/home'
+    else
+      redirect '/login'
+    end
+  end
 
+  get '/home' do
+    erb :'users/home'
+  end
 
-
-
+  get '/logout' do
+    if logged_in?
+      session.clear
+      redirect '/'
+    else
+      redirect '/'
+    end
+  end
 end
