@@ -7,14 +7,28 @@ class ListsController < ApplicationController
   end
 
 
+
   post '/lists' do
 
   end
 
 
-  get '/lists/new' do
 
+  get '/lists/new' do
+    if logged_in?
+      erb :'lists/create_list'
+    else
+      redirect '/'
+    end
   end
+
+
+
+
+
+
+
+
 
 
   get '/lists/:id' do
