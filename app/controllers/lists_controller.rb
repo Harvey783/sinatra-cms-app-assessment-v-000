@@ -3,7 +3,10 @@ class ListsController < ApplicationController
 
 
   get '/lists' do
-
+    redirect '/login' unless logged_in?
+    @user = User.find_by(id: session[:user_id])
+    @lists = List.all
+    erb :'/lists/lists'
   end
 
 
