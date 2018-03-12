@@ -13,17 +13,17 @@ class UsersController < ApplicationController
     if params[:username].empty? || params[:email].empty? || params[:password].empty?
       redirect '/signup'
     else
-      user = User.create(params)
-      user.save
-      session[:user_id] = user.id
+      @user = User.create(params)
+      @user.save
+      session[:user_id] = @user.id
       redirect '/home'
     end
   end
 
   post '/login' do
-    user = User.find_by(:username => params[:username])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+    @user = User.find_by(:username => params[:username])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
       flash[:success] = "Login successful"
       redirect '/home'
     else
