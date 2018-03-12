@@ -3,18 +3,15 @@ class ListsController < ApplicationController
 
 
   get '/lists' do
-    redirect '/login' unless logged_in?
+    redirect '/' unless logged_in?
     @user = User.find(current_user.id)
     @lists = List.all
     erb :'/lists/lists'
   end
 
   get '/lists/new' do
-    if logged_in?
-      erb :'lists/create_list'
-    else
-      redirect '/'
-    end
+    redirect '/' unless logged_in?
+    erb :'lists/create_list'
   end
 
   post '/lists' do

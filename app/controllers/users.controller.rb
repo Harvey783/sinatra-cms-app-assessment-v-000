@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       flash[:success] = "Login successful"
       redirect '/home'
     else
-      redirect '/login'
+      redirect '/'
     end
   end
 
