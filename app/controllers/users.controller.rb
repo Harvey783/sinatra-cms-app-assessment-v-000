@@ -1,3 +1,5 @@
+require 'rack-flash'
+
 class UsersController < ApplicationController
   use Rack::Flash
 
@@ -5,7 +7,7 @@ class UsersController < ApplicationController
     if logged_in?
       redirect '/home'
     else
-      erb :'/users/signup'
+      erb :'users/signup'
     end
   end
 
