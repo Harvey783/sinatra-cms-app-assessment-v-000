@@ -19,7 +19,7 @@ class ListsController < ApplicationController
     if params[:content].empty?
       redirect 'lists/new'
     else
-      list =List.create(content: params[:content], user_id: current_user.id)
+      list = List.create(content: params[:content], user_id: current_user.id)
       redirect to '/lists'
     end
   end
@@ -49,6 +49,17 @@ class ListsController < ApplicationController
       @list.content = params[:content]
       @list.save
       redirect to "/lists/#{@list.id}"
+    end
+  end
+
+  get '/lists/:id/delete' do
+    if logged_in?
+      @list = List.find_by_id(params[:id])
+      if @list.user.id == current_user.id
+        erb :'lists/edit_list'
+      end
+    else
+      redirect '/'
     end
   end
 
