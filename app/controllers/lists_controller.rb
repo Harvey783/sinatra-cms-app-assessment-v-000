@@ -4,15 +4,21 @@ class ListsController < ApplicationController
   use Rack::Flash
 
   get '/lists' do
-    redirect '/' unless logged_in?
-    @user = User.find(current_user.id)
-    @lists = List.all
-    erb :'lists/lists'
+    if logged_in?
+      @user = User.find(current_user.id)
+      @lists = List.all
+      erb :'lists/lists'
+    else
+      redirect to '/'
+    end
   end
 
   get '/lists/new' do
-    redirect '/' unless logged_in?
-    erb :'lists/create_list'
+    if logged_in?
+      erb :'lists/create_list'
+    else
+      redirect '/'
+    end
   end
 
   post '/lists' do
@@ -25,9 +31,12 @@ class ListsController < ApplicationController
   end
 
   get '/lists/:id' do
-    redirect '/' unless logged_in?
-    @list = List.find_by_id(params[:id])
-    erb :'lists/show_list'
+    if logged_in?
+      @list = List.find_by_id(params[:id])
+      erb :'lists/show_list'
+    else
+      redirect '/login'
+    end
   end
 
   get '/lists/:id/edit' do
@@ -43,7 +52,7 @@ class ListsController < ApplicationController
 
   patch '/lists/:id' do
     if params[:content].empty?
-      redirect to "/lists/#{params[:id]}/edit"
+      redirect "/lists/#{params[:id]}/edit"
     else
       @list = List.find_by_id(params[:id])
       @list.content = params[:content]
