@@ -1,9 +1,9 @@
-<h1>Edit</h1>
+<h5>EDIT</h5>
 <form action="/lists/<%=@list.id%>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
   <input type="text" name="content" required value="<%=@list.content%>">
   <input type="submit" value="submit">
-</form>
+</form><br>
 
 <form action="/lists/<%=@list.id%>/delete" method="POST" >
   <input type="hidden" name="_method" value="DELETE">
