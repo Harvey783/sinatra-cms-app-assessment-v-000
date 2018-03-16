@@ -1,5 +1,5 @@
 <h5>LISTS</h5>
 <h5><a href="/lists/new">New List</a></h5><br>
-<%@lists.each do |list|%>
+<%@user.lists.each do |list|%>
 <a href="/lists/<%=list.id%>"><%=list.content%></a><br>
 <%end%>

@@ -6,7 +6,6 @@ class ListsController < ApplicationController
   get '/lists' do
     if logged_in?
       @user = User.find(current_user.id)
-      @lists = List.all
       erb :'lists/lists'
     else
       redirect to '/'
