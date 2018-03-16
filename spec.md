@@ -20,3 +20,4 @@ Confirm
 
 rake db:create_migration NAME=create_
 git@github.com:Harvey783/sinatra-cms-app-assessment-v-000.git
+redirect to "/lists/#{@list.id}"

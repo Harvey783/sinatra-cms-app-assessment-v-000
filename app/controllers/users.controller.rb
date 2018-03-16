@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.find_by(:username => params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      flash[:success] = "Login successful"
+      flash[:notice] = "Login successful"
       redirect '/home'
     else
       redirect '/'
@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   get '/logout' do
     if logged_in?
       session.clear
+      flash[:notice] = 'Logout success'
       redirect '/'
     else
       redirect '/'
