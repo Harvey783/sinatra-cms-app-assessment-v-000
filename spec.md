@@ -18,7 +18,4 @@ Confirm
 - [ ] You made the changes in a commit that relate to the commit message
 - [ ] You don't include changes in a commit that aren't related to the commit message
 
-rake db:create_migration NAME=create_
 git@github.com:Harvey783/sinatra-cms-app-assessment-v-000.git
-redirect to "/lists/#{@list.id}"
-<a href="/lists/<%= @list.id %>/delete">Delete</a><br><br>
