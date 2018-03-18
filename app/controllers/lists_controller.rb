@@ -1,5 +1,3 @@
-require 'rack-flash'
-
 class ListsController < ApplicationController
   use Rack::Flash
 
