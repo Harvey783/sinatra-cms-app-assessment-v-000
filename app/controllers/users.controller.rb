@@ -1,6 +1,8 @@
+require 'sinatra/base'
 require 'rack-flash'
 
 class UsersController < ApplicationController
+  enable :sessions
   use Rack::Flash
 
   get '/signup' do
@@ -18,6 +20,7 @@ class UsersController < ApplicationController
       @user = User.create(params)
       @user.save
       session[:user_id] = @user.id
+      flash[:message] = "Successfully created your account"
       redirect '/home'
     end
   end

@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <div class="container">
   <h4 class="page-header"><%="Sinatra Portfolio Project"%></h4>
 </div>
