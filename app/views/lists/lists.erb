@@ -1,6 +1,26 @@
 <div class="container">
-  <h4 class="page-header"><%="Lists"%></h4><br>
-  <%@user.lists.each do |list|%>
-  <a href="/lists/<%=list.id%>"><%=list.content%></a><br>
-  <%end%>
-</div>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/lists">View All</a></li>
+            <li><a href="/lists/new">New List</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div>
+      <h1>Lists</h1>
+      <%@user.lists.each do |list|%>
+      <a href="/lists/<%=list.id%>"><%=list.content%></a><br>
+      <%end%>
+    </div>
+  </div>

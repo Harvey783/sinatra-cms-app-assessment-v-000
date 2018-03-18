@@ -19,3 +19,5 @@ Confirm
 - [ ] You don't include changes in a commit that aren't related to the commit message
 
 git@github.com:Harvey783/sinatra-cms-app-assessment-v-000.git
+
+<a class="navbar-brand" href="#"><%="#{current_user.username}"%></a>
