@@ -33,9 +33,8 @@
 </div><!-- /.container-fluid -->
 </nav>
 
-    <div>
+
       <h1>Lists</h1>
       <%@user.lists.each do |list|%>
       <a href="/lists/<%=list.id%>"><%=list.content%></a><br>
       <%end%>
-    </div>
