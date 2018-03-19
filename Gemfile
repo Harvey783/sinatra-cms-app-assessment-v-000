@@ -12,7 +12,6 @@ gem 'rack-flash3'
 gem 'pry'
 gem 'bcrypt'
 gem "tux"
-gem 'bootstrap'
 
 group :test do
   gem 'rspec'
