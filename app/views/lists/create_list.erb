@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"><%="#{current_user.username}"%></a>
+      <a class="navbar-brand"><%="Welcome #{current_user.username}"%></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -25,6 +25,6 @@
 <div class="container">
   <form action="/lists" method="POST">
     <textarea name="content" class="form-control" placeholder="Add whatever has to be done here" required></textarea><br>
-    <input type="submit" value="Create">
+    <input class="btn btn-primary" type="submit" value="Create">
   </form>
 </div>

@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"><%="#{current_user.username}"%></a>
+      <a class="navbar-brand"><%=" Welcome #{current_user.username}"%></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -26,7 +26,7 @@
   <div class="text-muted h4"
   <h4>Stuff you gotta do</h4><br><br>
 </div>
-  <div class="text-secondary h5">
+  <div class="text-secondary h4">
 <%@user.lists.each do |list|%>
 <a href="/lists/<%=list.id%>"><%=list.content%></a><br><br>
 <%end%>

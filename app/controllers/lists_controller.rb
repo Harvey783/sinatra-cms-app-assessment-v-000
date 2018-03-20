@@ -30,7 +30,9 @@ class ListsController < ApplicationController
   get '/lists/:id' do
     if logged_in?
       @list = List.find_by_id(params[:id])
-      erb :'lists/show_list'
+      if @list.user.id == current_user.id
+      erb :'lists/edit_list'
+    end
     else
       redirect '/login'
     end
