@@ -17,5 +17,3 @@ Confirm
 - [x] Your commit messages are meaningful
 - [x] You made the changes in a commit that relate to the commit message
 - [x] You don't include changes in a commit that aren't related to the commit message
-
-git@github.com:Harvey783/sinatra-cms-app-assessment-v-000.git
