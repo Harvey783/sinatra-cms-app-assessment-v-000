@@ -1,19 +1,18 @@
 # Sinatra Assessment: Stuff You Gotta Do
 
 ## Overview
-
 Welcome to the uniquely unoriginal Stuff You Gotta Do Sinatra Assessment App. Here you can easily keep track of all the things you have to do but likely wont. Enjoy.
 
-## Install Instructions
 
-1. Clone the [repository](https://github.com/Harvey783/sinatra-cms-app-assessment-v-000)
-2. $ cd sinatra-cms-app-assessment-v-000
-3. $ bundle install
-4. $ shotgun
-5. Copy and past server address into browser
+## Install Instructions
+1.  Clone the [repository](https://github.com/Harvey783/sinatra-cms-app-assessment-v-000)
+2.  $ cd sinatra-cms-app-assessment-v-000
+3.  $ bundle install
+4.  $ shotgun
+5.  Copy and past server address into browser
+
 
 ## MIT License (MIT)
-
 Copyright (c) 2018 Chris Harvey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

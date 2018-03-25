@@ -26,6 +26,7 @@
   <div class="text-muted h4"
     <h4>Stuff you gotta do...</h4><br><br>
   </div>
+
   <div class="text-secondary h4">
     <%@user.lists.each do |list|%>
     <a href="/lists/<%=list.id%>"><%=list.content%></a><br><br>
