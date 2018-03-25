@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-  use Rack::Flash
 
   get '/lists' do
     if logged_in?
