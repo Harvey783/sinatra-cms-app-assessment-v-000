@@ -37,17 +37,6 @@ class ListsController < ApplicationController
     end
   end
 
-  get '/lists/:id/edit' do
-    if logged_in?
-      @list = List.find_by_id(params[:id])
-      if @list.user.id == current_user.id
-        erb :'lists/edit_list'
-      end
-    else
-      redirect '/'
-    end
-  end
-
   patch '/lists/:id' do
     if params[:content].empty?
       redirect "/lists/#{params[:id]}/edit"
@@ -59,18 +48,7 @@ class ListsController < ApplicationController
     end
   end
 
-  get '/lists/:id/delete' do
-    if logged_in?
-      @list = List.find_by_id(params[:id])
-      if @list.user.id == current_user.id
-        erb :'lists/edit_list'
-      end
-    else
-      redirect '/'
-    end
-  end
-
-  delete '/lists/:id/delete' do
+  delete '/lists/:id' do
     if logged_in?
       @list = List.find_by_id(params[:id])
       if @list.user.id == current_user.id

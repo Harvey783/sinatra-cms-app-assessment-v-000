@@ -29,7 +29,7 @@
     <input class="btn btn-primary btn-sm" type="submit" value="UPDATE">
   </form><br>
 
-  <form action="/lists/<%=@list.id%>/delete" method="POST" >
+  <form action="/lists/<%=@list.id%>" method="POST" >
     <input type="hidden" name="_method" value="DELETE">
     <input class="btn btn-danger btn-sm" type="submit" value="DELETE">
   </form>
