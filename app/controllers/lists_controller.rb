@@ -21,7 +21,7 @@ class ListsController < ApplicationController
     if params[:content].empty?
       redirect 'lists/new'
     else
-      list = List.create(content: params[:content], user_id: current_user.id)
+      @user.list.create(content: params[:content])
       redirect to '/lists'
     end
   end
